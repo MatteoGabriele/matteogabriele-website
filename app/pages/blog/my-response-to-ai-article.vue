@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import aiArticleResponse from "~/assets/images/ai-article-response.png";
+
 useHead({
   title: "My Heated Response to That AI Article Nobody Asked For",
   meta: [
@@ -17,7 +19,7 @@ useHead({
       content:
         "Why This Popular AI Article Gets It Completely Wrong: A Critical Response",
     },
-    { property: "og:image", content: "/images/ai-article-response.jpg" },
+    { property: "og:image", content: aiArticleResponse },
     { name: "author", content: "Matteo Gabriele" },
     { name: "article:published_time", content: "2026-04-26" },
   ],
