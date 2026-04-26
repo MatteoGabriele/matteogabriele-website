@@ -22,6 +22,4 @@ useHead({
     { name: "article:published_time", content: "2026-04-26" },
   ],
 });
-
-navigateTo("https://www.youtube.com/watch?v=dQw4w9WgXcQ", { external: true });
 </script>
