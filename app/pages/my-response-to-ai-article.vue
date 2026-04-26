@@ -10,12 +10,12 @@ useHead({
     {
       property: "og:description",
       content:
-        "A scathing critique of a popular AI article that missed the point entirely. Here's why it's wrong.",
+        "Why This Popular AI Article Gets It Completely Wrong: A Critical Response",
     },
     {
       name: "description",
       content:
-        "A scathing critique of a popular AI article that missed the point entirely. Here's why it's wrong.",
+        "Why This Popular AI Article Gets It Completely Wrong: A Critical Response",
     },
     { property: "og:image", content: "/images/ai-article-response.jpg" },
     { name: "author", content: "Matteo Gabriele" },
@@ -23,5 +23,9 @@ useHead({
   ],
 });
 
-navigateTo("https://www.youtube.com/watch?v=dQw4w9WgXcQ", { external: true });
+onMounted(() => {
+  navigateTo("https://www.youtube.com/watch?v=dQw4w9WgXcQ", {
+    external: true,
+  });
+});
 </script>
