@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="flex items-center justify-center h-vh w-vw bg-neutral-300">
-    <div class="p-6 text-center">
+  <div class="bg-neutral-300 w-vw h-svh flex items-center justify-center">
+    <div class="text-center">
       <header>
         <h1 class="font-mono line-height-none text-2xl text-neutral-800">
           matteogabriele.com
