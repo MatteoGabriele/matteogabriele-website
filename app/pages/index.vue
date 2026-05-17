@@ -35,7 +35,7 @@
     </div>
 
     <div class="fixed bottom-0">
-      <img src="~/assets/images/travolta.gif" />
+      <img draggable="false" src="~/assets/images/travolta.gif" />
     </div>
   </div>
 </template>
