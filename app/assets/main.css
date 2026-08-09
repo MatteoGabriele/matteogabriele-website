@@ -5,3 +5,29 @@
   margin: 0;
   padding: 0;
 }
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f6f8fa;
+    --border: #b7b7b7;
+    --border-light: #d0d7de;
+    --text: #222222;
+    --text-muted: #57606a;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0b0b0b;
+    --border: #575757;
+    --border-light: #757575;
+    --text: #f0f0f0;
+    --text-muted: #808080;
+  }
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
