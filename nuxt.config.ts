@@ -6,13 +6,20 @@ export default defineNuxtConfig({
   fonts: {
     families: [
       {
-        name: 'Roboto',
+        name: 'Fraunces',
+        weights: ['400', '500', '600'],
+        preload: true,
+        global: true,
+      },
+      {
+        name: 'Sora',
         weights: ['400', '500', '600'],
         preload: true,
         global: true,
       },
     ],
   },
+
   css: ['~/assets/main.css'],
 
   routeRules: {
