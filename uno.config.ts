@@ -3,7 +3,7 @@ import {
   presetWind4,
   transformerDirectives,
   transformerVariantGroup,
-} from "unocss";
+} from 'unocss'
 
 export default defineConfig({
   presets: [presetWind4()],
@@ -14,9 +14,9 @@ export default defineConfig({
     },
     colors: {
       mg: {
-        bg: "var(--bg)",
-        text: "var(--text)",
+        bg: 'var(--bg)',
+        text: 'var(--text)',
       },
     },
   },
-});
+})
