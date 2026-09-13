@@ -1,67 +1,64 @@
 <script setup lang="ts">
 const writing: ArticleItem[] = [
   {
-    title: "The build step you didn't need",
+    title: 'Lorem ipsum dolor sit amet',
     createdAt: '2026-09-13T08:14:32.000Z',
     excerpt:
-      'Most of the complexity in a frontend toolchain is inherited, not chosen.',
+      'Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
     to: '/',
   },
   {
-    title: 'Types are a conversation with your future self',
+    title: 'Ut enim ad minim veniam',
     createdAt: '2026-08-28T16:42:07.000Z',
     excerpt:
-      'Type definitions that explain intent rather than merely satisfying the compiler.',
+      'Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.',
     to: '/',
   },
   {
-    title: 'Maintaining a library nobody thanks you for',
+    title: 'Duis aute irure dolor in reprehenderit',
     createdAt: '2026-07-10T11:05:48.000Z',
     excerpt:
-      'Five years of issues, one breaking change, and what maintenance actually consists of.',
+      'In voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint.',
     to: '/',
   },
 ]
 
 const openSourceProjects: OpenSourceProjectItem[] = [
   {
-    title: 'agentscan',
+    title: 'lorem-ipsum',
     stars: 97,
-    excerpt: 'Automation pattern detection for open source maintainers',
-    href: 'https://github.com/MatteoGabriele/agentscan',
+    excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
+    href: '#',
   },
   {
-    title: 'agentscan-action',
+    title: 'dolor-sit',
     stars: 57,
-    excerpt:
-      'GitHub Action that detects automation patterns for open source maintainers',
-    href: 'https://github.com/unveil-project/identity',
+    excerpt: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+    href: '#',
   },
   {
-    title: '@unveil/identity',
+    title: '@lorem/amet',
     stars: 46,
-    excerpt:
-      'Identify automation patterns in GitHub accounts through behavioral analysis',
-    href: 'https://github.com/unveil-project/identity',
+    excerpt: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco',
+    href: '#',
   },
   {
-    title: '@unveil/vk',
+    title: '@lorem/elit',
     stars: 5,
-    excerpt:
-      'Fetch GitHub account activity and analyze it for automation patterns',
-    href: 'https://github.com/unveil-project/identity',
+    excerpt: 'Duis aute irure dolor in reprehenderit in voluptate velit',
+    href: '#',
   },
   {
-    title: 'vue-gtag',
+    title: 'consectetur',
     stars: 941,
-    excerpt: 'Global Site Tag plugin for Vue (gtag.js)',
-    href: 'https://github.com/MatteoGabriele/vue-gtag',
+    excerpt: 'Excepteur sint occaecat cupidatat non proident',
+    href: '#',
   },
   {
-    title: 'vue-progressive-image',
+    title: 'adipiscing-elit',
     stars: 721,
-    excerpt: 'Vue progressive image loading plugin',
-    href: 'https://github.com/MatteoGabriele/vue-progressive-image',
+    excerpt: 'Sunt in culpa qui officia deserunt mollit anim id est laborum',
+    href: '#',
   },
 ]
 </script>
