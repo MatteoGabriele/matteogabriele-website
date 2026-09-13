@@ -1,6 +1,6 @@
 <script setup lang="ts">
 defineProps<{
-  item: ArticleItem
+  item: OpenSourceProjectItem
 }>()
 </script>
 
@@ -10,7 +10,7 @@ defineProps<{
   >
     <div>
       <NuxtLink
-        :to="item.to"
+        :href="item.href"
         class="group-hover:underline group-hover:text-mg-accent"
       >
         {{ item.title }}
@@ -20,11 +20,9 @@ defineProps<{
       </p>
     </div>
 
-    <NuxtTime
-      class="text-xs shrink-0"
-      :title="item.createdAt"
-      :datetime="item.createdAt"
-      relative
-    />
+    <p class="text-xs flex items-center shrink-0 gap-1">
+      <span class="i-lucide:star"></span>
+      <span>{{ item.stars }}</span>
+    </p>
   </li>
 </template>
