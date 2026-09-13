@@ -20,10 +20,10 @@ export default defineConfig({
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   theme: {
-    font: {
-      mono: "'Fraunces', serif",
-      sans: "'Sora', sans-serif",
-    },
+    // font: {
+    //   mono: "'Fraunces', serif",
+    //   sans: "'Sora', sans-serif",
+    // },
     colors: {
       mg: {
         bg: 'var(--bg)',
