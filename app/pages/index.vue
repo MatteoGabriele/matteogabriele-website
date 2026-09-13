@@ -1,4 +1,22 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const articles: ArticleItem[] = [
+  {
+    title: "The build step you didn't need",
+    createdAt: '2026-09-13T08:14:32.000Z',
+    to: '/',
+  },
+  {
+    title: 'Types are a conversation with your future self',
+    createdAt: '2026-08-28T16:42:07.000Z',
+    to: '/',
+  },
+  {
+    title: 'Maintaining a library nobody thanks you for',
+    createdAt: '2026-07-10T11:05:48.000Z',
+    to: '/',
+  },
+]
+</script>
 
 <template>
   <main class="mx-auto max-w-screen-sm p-6">
@@ -20,11 +38,12 @@
 
         <div class="text-sm text-mg-muted">
           <p>Software developer</p>
-          <p>Frontend tooling and open source</p>
+          <p class="font-200">Frontend tooling and open source</p>
         </div>
       </div>
     </header>
-    <section class="text-sm flex flex-col gap-2 mt-8 text-pretty">
+
+    <section class="text-sm flex flex-col gap-2 text-pretty mt-6 mb-12">
       <p>
         Passionate about software development, open source, and the people
         behind it.
@@ -35,5 +54,16 @@
       </p>
       <p>In my spare time I spam the internet with GIFs.</p>
     </section>
+
+    <div class="flex flex-col gap-12 mt-8">
+      <section class="flex flex-col gap-2 text-pretty">
+        <header class="mb-2">
+          <h2 class="uppercase font-mono text-xs">Writing</h2>
+        </header>
+        <ul class="flex flex-col font-200 text-sm">
+          <ArticleListItem v-for="article in articles" :item="article" />
+        </ul>
+      </section>
+    </div>
   </main>
 </template>
