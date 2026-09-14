@@ -1,5 +1,5 @@
 export function useArticles() {
   return useAsyncData('articles', () => {
-    return $fetch('/api/articles')
+    return $fetch<ArticleItem[]>('/api/articles')
   })
 }

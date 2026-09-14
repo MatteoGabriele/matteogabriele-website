@@ -26,5 +26,11 @@ export default defineNuxtConfig({
     '/': {
       prerender: true,
     },
+
+    '/api/github/projects': {
+      cache: {
+        maxAge: 60 * 60 * 24,
+      },
+    },
   },
 })
