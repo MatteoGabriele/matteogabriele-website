@@ -33,7 +33,8 @@ const openSourceProjects: OpenSourceProjectItem[] = [
   {
     title: 'dolor-sit',
     stars: 57,
-    excerpt: 'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
+    excerpt:
+      'Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua',
     href: '#',
   },
   {
@@ -81,14 +82,16 @@ const openSourceProjects: OpenSourceProjectItem[] = [
           />
         </NuxtLink>
 
-        <div class="text-sm text-mg-muted">
+        <div class="text-sm">
           <p>Software developer</p>
           <p class="font-200">Frontend tooling and open source</p>
         </div>
       </div>
     </header>
 
-    <section class="text-sm flex flex-col gap-2 text-pretty mt-6 mb-12">
+    <section
+      class="text-sm flex flex-col gap-2 text-pretty mt-6 mb-12 text-mg-text/80"
+    >
       <p>
         Passionate about software development, open source, and the people
         behind it.
@@ -105,7 +108,7 @@ const openSourceProjects: OpenSourceProjectItem[] = [
         <header class="mb-2">
           <h2 class="uppercase font-mono text-xs">Writing</h2>
         </header>
-        <ul class="flex flex-col font-200 text-sm">
+        <ul class="flex flex-col">
           <ArticleListItem v-for="article in writing" :item="article" />
         </ul>
       </section>
@@ -114,7 +117,7 @@ const openSourceProjects: OpenSourceProjectItem[] = [
         <header class="mb-2">
           <h2 class="uppercase font-mono text-xs">Open Source</h2>
         </header>
-        <ul class="flex flex-col font-200 text-sm">
+        <ul class="flex flex-col">
           <OpenSourceListItem
             v-for="project in openSourceProjects"
             :item="project"

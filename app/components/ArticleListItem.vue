@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <li
-    class="group border-b border-mg-border-light/60 py-2.5 flex gap-6 items-center justify-between"
+    class="group border-b border-mg-border-light/60 py-2.5 flex gap-6 items-center justify-between text-sm"
   >
     <div>
       <NuxtLink
@@ -15,7 +15,7 @@ defineProps<{
       >
         {{ item.title }}
       </NuxtLink>
-      <p class="text-xs text-mg-muted">
+      <p class="text-mg-muted">
         {{ item.excerpt }}
       </p>
     </div>
