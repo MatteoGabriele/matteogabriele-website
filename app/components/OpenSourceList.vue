@@ -4,7 +4,7 @@ const { data } = await useOpenSourceProjects()
 
 <template>
   <section class="flex flex-col gap-2 text-pretty">
-    <header class="mb-2">
+    <header>
       <h2 class="uppercase font-mono text-xs">Latest projects</h2>
     </header>
     <ul class="flex flex-col">

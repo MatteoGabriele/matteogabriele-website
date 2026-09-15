@@ -9,10 +9,7 @@ defineProps<{
     class="group border-b border-mg-border-light/60 py-2.5 flex gap-6 items-center justify-between text-sm"
   >
     <div>
-      <NuxtLink
-        :href="item.href"
-        class="group-hover:underline group-hover:text-mg-accent"
-      >
+      <NuxtLink :href="item.href" class="underline hover:text-mg-accent">
         {{ item.title }}
       </NuxtLink>
       <p class="text-mg-muted">
