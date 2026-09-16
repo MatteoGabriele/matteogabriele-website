@@ -6,7 +6,7 @@
       external
       href="https://github.com/MatteoGabriele"
       target="_blank"
-      class="size-14 overflow-hidden rounded-full filter-saturate-0 hover:filter-saturate-100"
+      class="size-12 overflow-hidden rounded-full"
     >
       <img
         src="~/assets/images/avatar.jpeg"

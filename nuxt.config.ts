@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/fonts', '@unocss/nuxt', '@nuxt/eslint'],
+  modules: ['@nuxt/fonts', '@unocss/nuxt', '@nuxt/eslint', '@nuxt/content'],
   fonts: {
     families: [
       {
