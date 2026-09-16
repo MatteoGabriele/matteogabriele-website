@@ -15,16 +15,13 @@ const showMainNav = computed<boolean>(() => {
       <nav v-if="showMainNav">
         <ul class="flex items-center gap-2">
           <li>
-            <NuxtLink
-              class="text-sm text-mg-muted hover:text-mg-accent underline"
-              to="/"
-            >
+            <NuxtLink class="text-sm text-mg-muted hover:text-mg-accent" to="/">
               home
             </NuxtLink>
           </li>
           <li>
             <NuxtLink
-              class="text-sm text-mg-muted hover:text-mg-accent underline"
+              class="text-sm text-mg-muted hover:text-mg-accent"
               to="/writing"
             >
               writing
