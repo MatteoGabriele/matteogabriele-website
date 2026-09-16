@@ -8,12 +8,15 @@ defineProps<{
   <li
     class="group border-b border-mg-border-light/60 py-2.5 flex gap-6 items-center justify-between text-sm"
   >
-    <div>
-      <NuxtLink :href="item.href" class="underline hover:text-mg-accent">
+    <div class="min-w-0">
+      <NuxtLink
+        :href="item.href"
+        class="block truncate underline hover:text-mg-accent"
+      >
         {{ item.title }}
       </NuxtLink>
-      <p class="text-mg-muted">
-        {{ item.excerpt }}
+      <p class="min-h-5 truncate text-mg-muted">
+        {{ item.description }}
       </p>
     </div>
 

@@ -1,20 +1,41 @@
 import { Octokit } from 'octokit'
 
+type Project = {
+  owner: string
+  repo: string
+}
+
+const projects: Project[] = [
+  { owner: 'MatteoGabriele', repo: 'agentscan' },
+  { owner: 'MatteoGabriele', repo: 'agentscan-action' },
+  { owner: 'unveil-project', repo: 'identity' },
+  { owner: 'unveil-project', repo: 'vk' },
+  { owner: 'MatteoGabriele', repo: 'vue-gtag' },
+  { owner: 'MatteoGabriele', repo: 'vue-progressive-image' },
+  { owner: 'MatteoGabriele', repo: 'vue-analytics' },
+]
+
 export default defineEventHandler(async () => {
   const octokit = new Octokit()
+  const repos: OpenSourceProjectItem[] = []
 
-  const response = await octokit.rest.repos.listForUser({
-    username: 'MatteoGabriele',
-    per_page: 100,
-  })
+  try {
+    for (const { owner, repo } of projects) {
+      const { data } = await octokit.rest.repos.get({ owner, repo })
 
-  return response.data
-    .filter((repo) => !repo.fork && (repo.stargazers_count ?? 0) > 50)
-    .map((repo) => ({
-      title: repo.name,
-      stars: repo.stargazers_count,
-      excerpt: repo.description,
-      href: repo.html_url,
-    }))
-    .slice(0, 7)
+      repos.push({
+        title: data.name,
+        stars: data.stargazers_count,
+        description: data.description,
+        href: data.html_url,
+      })
+    }
+
+    return repos
+  } catch (error) {
+    throw createError({
+      status: 404,
+      statusMessage: 'Repo not found',
+    })
+  }
 })
