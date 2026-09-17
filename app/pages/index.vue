@@ -2,18 +2,13 @@
 
 <template>
   <div class="flex items-center gap-4">
-    <NuxtLink
-      external
-      href="https://github.com/MatteoGabriele"
-      target="_blank"
-      class="size-12 overflow-hidden rounded-full"
-    >
+    <div class="size-12 overflow-hidden rounded-full">
       <img
         src="~/assets/images/avatar.jpeg"
         alt="Matteo Gabriele's avatar is a weird version of an overweight Super Mario riding a T-rex."
         draggable="false"
       />
-    </NuxtLink>
+    </div>
 
     <div class="text-sm">
       <p>Software developer</p>

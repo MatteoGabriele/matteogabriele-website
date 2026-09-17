@@ -1,41 +1,48 @@
 import { Octokit } from 'octokit'
 
-type Project = {
-  owner: string
-  repo: string
-}
-
-const projects: Project[] = [
-  { owner: 'MatteoGabriele', repo: 'agentscan' },
-  { owner: 'MatteoGabriele', repo: 'agentscan-action' },
-  { owner: 'unveil-project', repo: 'identity' },
-  { owner: 'unveil-project', repo: 'vk' },
-  { owner: 'MatteoGabriele', repo: 'vue-gtag' },
-  { owner: 'MatteoGabriele', repo: 'vue-progressive-image' },
-  { owner: 'MatteoGabriele', repo: 'vue-analytics' },
+const oss: string[] = [
+  'MatteoGabriele/agentscan',
+  'MatteoGabriele/agentscan-action',
+  'unveil-project/identity',
+  'unveil-project/vk',
+  'MatteoGabriele/vue-gtag',
+  'MatteoGabriele/vue-progressive-image',
 ]
 
-export default defineEventHandler(async () => {
-  const octokit = new Octokit()
-  const repos: OpenSourceProjectItem[] = []
+export default defineCachedEventHandler(
+  async () => {
+    const octokit = new Octokit()
+    const repos: OpenSourceProjectItem[] = []
 
-  try {
-    for (const { owner, repo } of projects) {
-      const { data } = await octokit.rest.repos.get({ owner, repo })
+    try {
+      for (const project of oss) {
+        const [owner, repo] = project.split('/')
 
-      repos.push({
-        title: data.name,
-        stars: data.stargazers_count,
-        description: data.description,
-        href: data.html_url,
+        if (!repo || !owner) {
+          continue
+        }
+
+        const { data } = await octokit.rest.repos.get({ owner, repo })
+
+        repos.push({
+          title: data.full_name,
+          description: data.description,
+          href: data.html_url,
+        })
+      }
+
+      return repos
+    } catch (error) {
+      throw createError({
+        status: 404,
+        statusMessage: 'Repo not found',
       })
     }
-
-    return repos
-  } catch (error) {
-    throw createError({
-      status: 404,
-      statusMessage: 'Repo not found',
-    })
-  }
-})
+  },
+  {
+    name: 'github-projects',
+    maxAge: 60 * 60 * 24 * 7,
+    swr: true,
+    staleMaxAge: -1,
+  },
+)

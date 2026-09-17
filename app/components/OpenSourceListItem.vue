@@ -16,10 +16,5 @@ defineProps<{
         {{ item.description }}
       </p>
     </div>
-
-    <p class="flex items-center shrink-0 text-xs line-height-none gap-1">
-      <span>{{ item.stars }}</span>
-      <span class="i-lucide:star text-mg-muted"></span>
-    </p>
   </li>
 </template>
