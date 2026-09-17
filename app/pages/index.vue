@@ -1,41 +1,37 @@
 <script setup lang="ts"></script>
 
 <template>
-  <div class="bg-neutral-300 w-vw h-svh flex items-center justify-center">
-    <div class="text-center">
-      <header>
-        <h1 class="font-mono line-height-none text-2xl text-neutral-800">
-          matteogabriele.com
-        </h1>
-        <p class="text-neutral-500 text-sm">coming soon? perhaps.</p>
-      </header>
-
-      <ul
-        class="text-sm flex gap-2 items-center justify-center mt-8 text-neutral-600"
-      >
-        <li>
-          <NuxtLink
-            external
-            to="https://github.com/matteogabriele"
-            class="underline hover:text-white"
-          >
-            GitHub
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink
-            external
-            to="https://bsky.app/profile/matteogabriele.bsky.social"
-            class="underline hover:text-white"
-          >
-            Bluesky
-          </NuxtLink>
-        </li>
-      </ul>
+  <div class="flex items-center gap-4">
+    <div class="size-12 overflow-hidden rounded-full">
+      <img
+        src="~/assets/images/avatar.jpeg"
+        alt="Matteo Gabriele's avatar is a weird version of an overweight Super Mario riding a T-rex."
+        draggable="false"
+      />
     </div>
 
-    <div class="fixed bottom-0">
-      <img draggable="false" src="~/assets/images/travolta.gif" />
+    <div class="text-sm">
+      <p>Software developer</p>
+      <p class="font-200">Frontend tooling and open source</p>
     </div>
+  </div>
+
+  <section
+    class="text-sm flex flex-col gap-2 text-pretty mt-6 mb-12 text-mg-text/80"
+  >
+    <p>
+      Passionate about software development, open source, and the people behind
+      it.
+    </p>
+    <p>
+      These days you'll find me building libraries and websites, conjuring CI
+      workflows, avoiding AI, and helping open source communities deal with
+      automation spam.
+    </p>
+  </section>
+
+  <div class="flex flex-col gap-20 mt-8">
+    <ArticleList :max="4" />
+    <OpenSourceList />
   </div>
 </template>
