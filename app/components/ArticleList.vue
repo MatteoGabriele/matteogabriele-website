@@ -11,17 +11,20 @@ const items = computed(() => {
 
   return data.value
 })
+
+const remainingArticlesCount = computed<number | null>(() => {
+  if (!data.value || !items.value) {
+    return null
+  }
+
+  return data.value.length - items.value.length
+})
 </script>
 
 <template>
   <section v-if="items?.length" class="flex flex-col gap-2 text-pretty">
     <header>
-      <h2 class="uppercase font-mono text-xs">
-        Writing
-        <span class="text-mg-muted" v-if="items.length > 1">{{
-          items.length
-        }}</span>
-      </h2>
+      <h2 class="uppercase font-mono text-xs">Writing</h2>
     </header>
     <ul class="flex flex-col">
       <ArticleListItem v-for="item in items" :item="item" />
@@ -30,7 +33,11 @@ const items = computed(() => {
       <NuxtLink
         class="text-sm text-mg-muted underline hover:text-mg-accent"
         to="/writing"
-        >See all articles</NuxtLink
+        >See
+        <span v-if="data && data.length > 1">
+          {{ remainingArticlesCount }}
+        </span>
+        more article{{ remainingArticlesCount === 1 ? '' : 's' }}</NuxtLink
       >
     </div>
   </section>
